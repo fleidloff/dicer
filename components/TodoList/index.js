@@ -3,7 +3,9 @@ import TodoList from './TodoList';
 
 
 store.todos =[
-	"next.js api routes",
+	"env variables for Pusher secret",
+	"throw dice page + api",
+	"deploy to zeit -> now",
 	"prettier",
 	"bulma navbar",
 	"check for duplicate store bootstraps",

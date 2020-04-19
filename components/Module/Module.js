@@ -11,7 +11,7 @@ function App({ children }) {
   return (<>
 
     <Head>
-      <title>Create Next App</title>
+      <title>Dicer App</title>
       <link rel="icon" href="/favicon.ico" />
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css" />
     </Head>

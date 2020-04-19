@@ -1,7 +1,18 @@
 import Pusher from 'pusher';
-import pusherSettings from '../../config/__secret__pusher.json'
+import publicSettings from '../../config/pusher.json';
 
-const pusher = new Pusher(pusherSettings);
+import dotenv from 'dotenv';
+// todo: move dotenv config somewhere else
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config();
+}
+
+const secretSettings = {
+	appId: process.env.PUSHER_APP_ID,
+	secret: process.env.PUSHER_SECRET
+};
+
+const pusher = new Pusher({ ...secretSettings, ...publicSettings });
 
 export default (req, res) => {
 	pusher.trigger('my-channel', 'my-event', {

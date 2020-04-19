@@ -1,3 +1,5 @@
 {
-  "key": "c9b98fd90bb0ee097945"
+  "key": "c9b98fd90bb0ee097945",
+  "cluster": "eu",
+  "useTLS": true 
 }
