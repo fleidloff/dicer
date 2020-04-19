@@ -3,14 +3,11 @@ import TodoList from './TodoList';
 
 
 store.todos =[
-	"env variables for Pusher secret",
-	"throw dice page + api",
 	"deploy to zeit -> now",
+	"throw dice page + api",
 	"prettier",
 	"bulma navbar",
 	"check for duplicate store bootstraps",
-	"socket.io",
-	"deploy to zeit.co"
 ];
 
 export default TodoList;
