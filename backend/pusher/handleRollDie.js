@@ -5,7 +5,7 @@ function getRandomIntGreaterZero(max) {
 }
 
 export default function handleRollDie(channel) {
-  const promise = new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     const timeout = setTimeout(reject, 3000);
 
      pusher.trigger(
