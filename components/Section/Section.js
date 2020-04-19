@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 export default function Section({ children, title }) {
   return (
@@ -10,5 +10,5 @@ export default function Section({ children, title }) {
       )}
       {children && <div className="content">{children}</div>}
     </section>
-  );
+  )
 }

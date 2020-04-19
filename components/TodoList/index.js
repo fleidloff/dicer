@@ -1,5 +1,5 @@
-import { store } from "react-recollect";
-import TodoList from "./TodoList";
+import { store } from "react-recollect"
+import TodoList from "./TodoList"
 
 store.todos = [
   "deploy to zeit -> now",
@@ -7,6 +7,6 @@ store.todos = [
   "prettier",
   "bulma navbar",
   "check for duplicate store bootstraps",
-];
+]
 
-export default TodoList;
+export default TodoList
