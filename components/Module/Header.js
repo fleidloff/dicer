@@ -5,8 +5,8 @@ export default function () {
     <section className="hero is-primary">
       <div className="hero-body">
         <div className="container">
-          <h1 className="title">Midi Webapp</h1>
-          <h2 className="subtitle">just some playground project</h2>
+          <h1 className="title">Dicer</h1>
+          <h2 className="subtitle">throw dice online</h2>
         </div>
       </div>
     </section>

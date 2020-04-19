@@ -18,8 +18,6 @@ function App({ children }) {
       <Header />
 
       {children}
-
-      <Footer />
     </>
   )
 }
