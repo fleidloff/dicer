@@ -1,7 +1,7 @@
 import pusher from './pusher';
 
 function getRandomIntGreaterZero(max) {
-  return Math.floor(Math.random() * Math.floor(max - 1)) + 1
+   return 1 + Math.floor(Math.random() * max);
 }
 
 export default function handleRollDie(channel) {

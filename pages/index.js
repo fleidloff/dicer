@@ -1,9 +1,9 @@
-import Link from "next/link";
-import React from "react";
+import Link from "next/link"
+import React from "react"
 
-import { key } from "../config/pusher.json";
-import Module from "../components/Module";
-import Section from "../components/Section";
+import { key } from "../config/pusher.json"
+import Module from "../components/Module"
+import Section from "../components/Section"
 
 export default function Home() {
   return (
@@ -17,5 +17,5 @@ export default function Home() {
         </Link>
       </Section>
     </Module>
-  );
+  )
 }

@@ -4,6 +4,7 @@ import { collect } from "react-recollect"
 import usePusherSubscription from "./usePusherSubscription"
 import { rollDie } from "./api"
 import Section from "../Section"
+import Die from "./Die"
 
 function Dices({ store }) {
   usePusherSubscription(store.dices)
@@ -11,6 +12,7 @@ function Dices({ store }) {
   return (
     <Section>
       {store.dices.value}
+      <Die value={store.dices.value} />
       <br />
       <br />
       <button className="button" onClick={() => rollDie(store.dices.channel)}>
