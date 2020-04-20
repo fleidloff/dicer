@@ -7,7 +7,6 @@ export default async function (req, res) {
     await handleRollDie({ channel, name, id })
   }
 
-  res.statusCode = 200
-  res.setHeader("Content-Type", "application/json")
-  res.end(JSON.stringify({ some: "result" }))
+  res.statusCode = 204
+  res.end()
 }

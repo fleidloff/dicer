@@ -1,0 +1,30 @@
+.dice {
+	display: flex;
+}
+
+.die {
+	border: 1px solid black;
+	width: 4rem;
+	height: 4rem;
+	margin: 5px;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 2.5rem;
+	color: black;
+}
+
+.red {
+	background-color: #df0000;
+}
+
+.yellow {
+	background-color: #fdca00;
+}
+
+.green {
+	background-color: #339900;
+}
+
+.blue {
+	background-color: #336699;
+}
