@@ -1,13 +1,13 @@
 import axios from "axios"
-import { ROLLING } from "./Dice"
+import { ROLLING } from "../Dice"
 
-function rollDie(dices) {
-  dices.value = ROLLING
+function rollDie(qwixx) {
+  qwixx.value = ROLLING
   // todo: prevent double clicking!!!
-  axios.post("/api/dices", {
-    channel: dices.channel,
-    name: dices.name,
-    id: dices.id,
+  axios.post("/api/qwixx", {
+    channel: qwixx.channel,
+    name: qwixx.name,
+    id: qwixx.id,
     event: "roll-die",
   })
 }

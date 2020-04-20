@@ -1,8 +1,6 @@
 import Die from "./Die"
 import styles from "./die.module.css"
-
-export const ROLLING = "die-rolling"
-export const INITIAL = "die-initial"
+import { INITIAL, ROLLING } from "./index"
 
 export default function Dice({ value, color = "white" }) {
   switch (value) {

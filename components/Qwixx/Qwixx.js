@@ -4,24 +4,24 @@ import { collect } from "react-recollect"
 import usePusherSubscription from "./usePusherSubscription"
 import { rollDie } from "./api"
 import Section from "../Section"
-import Dice, { ROLLING } from "./Dice"
-import RoomSelection from "./RoomSelection"
+import Dice, { ROLLING } from "../Dice"
+import RoomSelection from "../RoomSelection"
 
 function Qwixx({ store }) {
-  usePusherSubscription(store.dices)
+  usePusherSubscription(store.qwixx)
 
-  if (!store.dices.channel || !store.dices.name) {
+  if (!store.qwixx.channel || !store.qwixx.name) {
     return <RoomSelection />
   }
 
-  const isRolling = store.dices.value === ROLLING
+  const isRolling = store.qwixx.value === ROLLING
 
   return (
     <Section>
-      <Dice value={store.dices.value} />
+      <Dice value={store.qwixx.value} />
       <br />
       <br />
-      <button className={`button ${isRolling ? "is-loading" : ""}`} onClick={() => isRolling || rollDie(store.dices)}>
+      <button className={`button ${isRolling ? "is-loading" : ""}`} onClick={() => isRolling || rollDie(store.qwixx)}>
         Roll Die
       </button>
     </Section>
