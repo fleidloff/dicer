@@ -11,11 +11,10 @@ function Dices({ store }) {
 
   return (
     <Section>
-      {store.dices.value}
       <Die value={store.dices.value} />
       <br />
       <br />
-      <button className="button" onClick={() => rollDie(store.dices.channel)}>
+      <button className="button" onClick={() => rollDie(store.dices)}>
         Roll Die
       </button>
     </Section>

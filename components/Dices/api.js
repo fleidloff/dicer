@@ -1,9 +1,11 @@
 import axios from "axios"
+import { ROLLING } from "./Die"
 
-function rollDie(channel) {
-  // todo: permit double clicking
+function rollDie(dices) {
+  dices.value = ROLLING
+  // todo: prevent double clicking!!!
   axios.post("/api/dices", {
-    channel,
+    channel: dices.channel,
     event: "roll-die",
   })
 }

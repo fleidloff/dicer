@@ -1,7 +1,6 @@
 import Link from "next/link"
 import React from "react"
 
-import { key } from "../config/pusher.json"
 import Module from "../components/Module"
 import Section from "../components/Section"
 

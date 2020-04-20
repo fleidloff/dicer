@@ -4,6 +4,8 @@ import Dices from "./Dices"
 
 store.dices = {
   channel: "freds-tafel",
+  name: "Fred",
+  id: "tbd",
   value: 6,
 }
 
