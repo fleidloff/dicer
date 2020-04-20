@@ -2,19 +2,12 @@ import Link from "next/link"
 import React from "react"
 
 import Module from "../components/Module"
-import Section from "../components/Section"
+import Qwixx from "../components/Qwixx"
 
-export default function Home() {
+export default function DicesPage() {
   return (
     <Module>
-      <Section>
-        <Link href="/todos">
-          <button className="button">Todos</button>
-        </Link>
-        <Link href="/dices">
-          <button className="button">Dices</button>
-        </Link>
-      </Section>
+      <Qwixx />
     </Module>
   )
 }

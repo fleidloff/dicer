@@ -6,6 +6,7 @@ export default function Section({ children, title }) {
       {title && (
         <div className="container">
           <h1 className="title">{title}</h1>
+          <br />
         </div>
       )}
       {children && <div className="content">{children}</div>}

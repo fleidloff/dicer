@@ -17,6 +17,8 @@
     "pusher-js": "^5.1.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-recollect": "^5.2.2"
+    "react-recollect": "^5.2.2",
+    "short-hash": "^1.0.0",
+    "uuid": "^7.0.3"
   }
 }
