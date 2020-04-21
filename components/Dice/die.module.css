@@ -1,8 +1,11 @@
 .dice {
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 }
 
 .die {
+	flex: 1 0 26%; /* explanation below */
 	border: 1px solid black;
 	width: 4rem;
 	height: 4rem;

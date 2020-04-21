@@ -12,4 +12,9 @@ store.qwixx = {
   value: INITIAL,
 }
 
+if (process.env.NODE_ENV !== "production") {
+  store.qwixx.name = "Fred"
+  store.qwixx.channel = "dev"
+}
+
 export default Qwixx
