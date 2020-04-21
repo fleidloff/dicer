@@ -5,7 +5,7 @@ store.todos = [
   "make form better",
   "user management -> show users after throwing dice",
   "dice + dice rolling design",
-  "translations",
+  "translations -> with loaded translations on build",
 ]
 
 export default TodoList

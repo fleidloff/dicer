@@ -16,8 +16,16 @@ function Qwixx({ store }) {
 
   const isRolling = store.qwixx.value === ROLLING
 
+  console.log(store.qwixx.name, store.qwixx.hashedId, store.qwixx.value.hashedId)
+
   return (
     <Section>
+      {store.qwixx.value.name === store.qwixx.name && store.qwixx.value.hashedId !== store.qwixx.hashedId && (
+        <p>
+          <b>ACHTUNG! JEMAND HAT DEN GLEICHEN NAMEN WIE DU!</b>
+        </p>
+      )}
+      <p>{store.qwixx.value.name && `${store.qwixx.value.name} rolled`}&nbsp;</p>
       <Dice value={store.qwixx.value} />
       <br />
       <br />

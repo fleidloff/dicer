@@ -10,6 +10,8 @@ export default function handleRollDie({ channel, name, id }) {
   return new Promise((resolve, reject) => {
     const timeout = setTimeout(reject, 3000)
 
+    const hashedId = shortHash(id)
+
     pusher.trigger(
       channel,
       "rolled-die",
@@ -21,13 +23,13 @@ export default function handleRollDie({ channel, name, id }) {
           blue: getRandomDiceRoll(),
           white1: getRandomDiceRoll(),
           white2: getRandomDiceRoll(),
+          name,
+          hashedId,
         },
-        name,
-        id: shortHash(id),
       },
       () => {
         clearTimeout(timeout)
-        resolve()
+        resolve(hashedId)
       }
     )
   })

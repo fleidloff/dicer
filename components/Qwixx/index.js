@@ -8,6 +8,7 @@ store.qwixx = {
   channel: "freds-channel",
   name: "Fred",
   id: uuidv4(),
+  hashedId: null,
   value: INITIAL,
 }
 

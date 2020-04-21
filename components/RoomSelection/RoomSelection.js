@@ -4,48 +4,63 @@ import { collect } from "react-recollect"
 import Section from "../Section"
 
 function RoomSelection({ store }) {
-  const [name, setName] = useState(store.dices.name)
-  const [channel, setChannel] = useState(store.dices.channel)
+  const [name, setName] = useState(store.qwixx.name)
+  const [channel, setChannel] = useState(store.qwixx.channel)
 
-  function handleEnter() {
-    store.dices.name = name
-    store.dices.channel = encodeURIComponent(channel.replace(" ", ""))
+  function handleSubmit() {
+    store.qwixx.name = name
+    store.qwixx.channel = encodeURIComponent(channel.replace(" ", ""))
   }
 
   return (
-    <Section title="Choose a room">
-      <div className="field is-horizontal">
-        <label className="label">Name</label>
-        <div className="control">
-          <input
-            className="input"
-            type="text"
-            placeholder="John Doe"
-            value={name}
-            onChange={ev => setName(ev.target.value)}
-          />
+    <form onSubmit={handleSubmit}>
+      <Section title="Choose name and channel">
+        <div className="container is-desktop">
+          <div className="field is-horizontal">
+            <div className="field-label is-normal">
+              <label className="label">Name</label>
+            </div>
+            <div className="field-body">
+              <div className="field">
+                <input
+                  className="input"
+                  type="text"
+                  placeholder="John Doe"
+                  value={name}
+                  onChange={ev => setName(ev.target.value)}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="field is-horizontal">
+            <div className="field-label is-normal">
+              <label className="label">Channel</label>
+            </div>
+            <div className="field-body">
+              <div className="field">
+                <input
+                  className="input"
+                  type="text"
+                  placeholder="Secret Place"
+                  value={channel}
+                  onChange={ev => setChannel(ev.target.value)}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="field is-horizontal">
+            <div className="field-label is-normal"></div>
+            <div className="field-body">
+              <div className="field">
+                <button type="submit" className="button is-link">
+                  Enter
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="field is-horizontal">
-        <label className="label">Room</label>
-        <div className="control">
-          <input
-            className="input"
-            type="text"
-            placeholder="Secret Place"
-            value={channel}
-            onChange={ev => setChannel(ev.target.value)}
-          />
-        </div>
-      </div>
-      <div className="field">
-        <div className="control">
-          <button className="button is-link" onClick={handleEnter}>
-            Enter
-          </button>
-        </div>
-      </div>
-    </Section>
+      </Section>
+    </form>
   )
 }
 

@@ -11,7 +11,7 @@ export default function usePusherSubscription(qwixx) {
     })
 
     const channel = pusher.subscribe(qwixx.channel)
-    channel.bind("rolled-die", ({ value, name, id }) => {
+    channel.bind("rolled-die", ({ value }) => {
       qwixx.value = ROLLING
       setTimeout(() => {
         // todo: handle user
