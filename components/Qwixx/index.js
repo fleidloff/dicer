@@ -5,8 +5,8 @@ import { INITIAL } from "../Dice"
 import Qwixx from "./Qwixx"
 
 store.qwixx = {
-  channel: "freds-channel",
-  name: "Fred",
+  channel: "secret channel",
+  name: "",
   id: uuidv4(),
   hashedId: null,
   value: INITIAL,

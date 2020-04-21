@@ -16,8 +16,6 @@ function Qwixx({ store }) {
 
   const isRolling = store.qwixx.value === ROLLING
 
-  console.log(store.qwixx.name, store.qwixx.hashedId, store.qwixx.value.hashedId)
-
   return (
     <Section>
       {store.qwixx.value.name === store.qwixx.name && store.qwixx.value.hashedId !== store.qwixx.hashedId && (
