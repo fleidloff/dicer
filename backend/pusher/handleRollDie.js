@@ -1,34 +1,34 @@
-import shortHash from 'short-hash';
-import pusher from './pusher';
+import shortHash from "short-hash"
+import pusher from "./pusher"
+import random from "random"
 
-function getRandomIntGreaterZero(max) {
-   return 1 + Math.floor(Math.random() * max);
+function getRandomDiceRoll() {
+  return random.int(1, 6)
 }
 
 export default function handleRollDie({ channel, name, id }) {
   return new Promise((resolve, reject) => {
-    const timeout = setTimeout(reject, 3000);
+    const timeout = setTimeout(reject, 3000)
 
-     pusher.trigger(
+    pusher.trigger(
       channel,
       "rolled-die",
       {
         value: {
-          red: getRandomIntGreaterZero(6),
-          yellow: getRandomIntGreaterZero(6),
-          green: getRandomIntGreaterZero(6),
-          blue: getRandomIntGreaterZero(6),
-          white1: getRandomIntGreaterZero(6),
-          white2: getRandomIntGreaterZero(6)
+          red: getRandomDiceRoll(),
+          yellow: getRandomDiceRoll(),
+          green: getRandomDiceRoll(),
+          blue: getRandomDiceRoll(),
+          white1: getRandomDiceRoll(),
+          white2: getRandomDiceRoll(),
         },
         name,
-        id: shortHash(id)
+        id: shortHash(id),
       },
       () => {
         clearTimeout(timeout)
         resolve()
       }
     )
-  });
- 
+  })
 }

@@ -2,8 +2,8 @@ import axios from "axios"
 import { ROLLING } from "../Dice"
 
 function rollDie(qwixx) {
+  // todo: new state for initiated rolling with abort condition after 4 seconds
   qwixx.value = ROLLING
-  // todo: prevent double clicking!!!
   axios.post("/api/qwixx", {
     channel: qwixx.channel,
     name: qwixx.name,

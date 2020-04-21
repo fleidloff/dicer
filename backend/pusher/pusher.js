@@ -14,4 +14,4 @@ const secretSettings = {
 
 const pusher = new Pusher({ ...secretSettings, ...publicSettings })
 
-export default pusher;
+export default pusher
