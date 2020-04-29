@@ -13,10 +13,12 @@ export default function usePusherSubscription(qwixx) {
     const channel = pusher.subscribe(qwixx.channel)
     channel.bind("rolled-die", ({ value }) => {
       qwixx.value = ROLLING
+      qwixx.rolling = value.name
       setTimeout(() => {
         // todo: handle user
         qwixx.value = value
-      }, 250)
+        qwixx.rolling = ""
+      }, 500)
     })
 
     return () => {

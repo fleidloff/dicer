@@ -10,6 +10,7 @@ store.qwixx = {
   id: uuidv4(),
   hashedId: null,
   value: INITIAL,
+  rolling: null,
 }
 
 if (process.env.NODE_ENV !== "production") {

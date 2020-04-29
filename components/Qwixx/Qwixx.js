@@ -23,7 +23,11 @@ function Qwixx({ store }) {
           <b>ACHTUNG! JEMAND HAT DEN GLEICHEN NAMEN WIE DU!</b>
         </p>
       )}
-      <p>{store.qwixx.value.name && `${store.qwixx.value.name} rolled`}&nbsp;</p>
+      <p>
+        {store.qwixx.value.name && `${store.qwixx.value.name} rolled`}
+        {store.qwixx.rolling && `${store.qwixx.rolling} rolls`}&nbsp;
+      </p>
+      <p></p>
       <Dice value={store.qwixx.value} />
       <br />
       <br />
