@@ -1,11 +1,15 @@
 .dice {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
+	display: grid;
+ 	grid-gap: 10px;
+	grid-template-columns: 100px  100px  100px 100px;
+    grid-template-areas:
+       	"red   yellow white"
+     	"green blue   white2";
+	width: 0;
 }
 
 .die {
-	flex: 1 0; /* explanation below */
+
 	border: 1px solid black;
 	width: 4rem;
 	height: 4rem;
@@ -14,26 +18,43 @@
 	text-align: center;
 	font-size: 2.5rem;
 	color: black;
+	background: white;
 }
 
 @media (max-width: 500px) {
-	.die {
-		flex: 1 0 26%;
+	.dice {
+		grid-template-columns: 100px  100px;
+    	grid-template-areas:
+	       	"red   yellow"
+	     	"green blue"
+	     	"white white2";
 	}
 }
 
 .red {
 	background-color: #df0000;
+	grid-area: red;
 }
 
 .yellow {
 	background-color: #fdca00;
+	grid-area: yellow;
 }
 
 .green {
 	background-color: #339900;
+	grid-area: green;
 }
 
 .blue {
 	background-color: #336699;
+	grid-area: blue;
 }
+
+.white {
+	grid-area: white;
+}	
+
+.white2 {
+	grid-area: white2;
+}	
