@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import Pusher from "pusher-js"
 import { key } from "../../config/pusher.json"
-import { ROLLING } from "../Dice"
+import { handleRolled } from "../Dice"
 
 export default function usePusherSubscription(qwixx) {
   useEffect(() => {
@@ -10,18 +10,19 @@ export default function usePusherSubscription(qwixx) {
       forceTLS: true,
     })
 
-    const channel = pusher.subscribe(qwixx.channel)
-    channel.bind("rolled-die", ({ value }) => {
-      qwixx.value = ROLLING
-      qwixx.rolling = value.name
-      setTimeout(() => {
-        // todo: handle user
-        qwixx.value = value
-        qwixx.rolling = ""
-      }, 500)
+    pusher.connection.bind("error", function (err) {
+      if (err.error.data.code === 4004) {
+        // todo: handle error
+        console.error("Over limit!")
+      }
     })
 
+    const channel = pusher.subscribe(qwixx.channel)
+
+    channel.bind("rolled-die", handleRolled)
+
     return () => {
+      console.log("unsubscribe")
       pusher.unsubscribe(qwixx.channel)
     }
   }, [qwixx.channel])

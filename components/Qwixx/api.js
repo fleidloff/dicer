@@ -1,20 +1,20 @@
 import axios from "axios"
+import { store } from "react-recollect"
 import { ROLLING } from "../Dice"
 
-function rollDie(qwixx) {
+function rollDie() {
   // todo: new state for initiated rolling with abort condition after 4 seconds
-  qwixx.value = ROLLING
-  qwixx.rolling = qwixx.name
+  store.dice = { ...ROLLING, name: store.qwixx.name }
 
   axios
     .post("/api/qwixx", {
-      channel: qwixx.channel,
-      name: qwixx.name,
-      id: qwixx.id,
+      channel: store.qwixx.channel,
+      name: store.qwixx.name,
+      id: store.qwixx.id,
       event: "roll-die",
     })
     .then(res => {
-      qwixx.hashedId = res.data.hashedId
+      store.qwixx.hashedId = res.data.hashedId
     })
 }
 
