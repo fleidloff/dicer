@@ -5,6 +5,10 @@ import { handleRolled } from "../Dice"
 
 export default function usePusherSubscription(qwixx) {
   useEffect(() => {
+    if (!qwixx.channel) {
+      return
+    }
+    console.log("subscribe", qwixx.channel)
     const pusher = new Pusher(key, {
       cluster: "eu",
       forceTLS: true,
@@ -13,7 +17,7 @@ export default function usePusherSubscription(qwixx) {
     pusher.connection.bind("error", function (err) {
       if (err.error.data.code === 4004) {
         // todo: handle error
-        console.error("Over limit!")
+        console.error("Over limit.")
       }
     })
 

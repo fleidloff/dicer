@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid"
 import Qwixx from "./Qwixx"
 
 store.qwixx = {
-  channel: "secret channel",
+  channel: "secret",
   name: "",
   id: uuidv4(),
   hashedId: null,
@@ -12,7 +12,6 @@ store.qwixx = {
 
 if (process.env.NODE_ENV !== "production") {
   store.qwixx.name = "Fred"
-  store.qwixx.channel = "dev"
 }
 
 export default Qwixx
