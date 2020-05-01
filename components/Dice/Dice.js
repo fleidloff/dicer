@@ -1,6 +1,6 @@
 import { collect } from "react-recollect"
 import Die from "./Die"
-import styles from "./die.module.css"
+import styles from "./dice.module.css"
 import { INITIAL, ROLLING } from "./index"
 
 function Dice({ store }) {

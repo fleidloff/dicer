@@ -3,12 +3,12 @@ import Pusher from "pusher-js"
 import { key } from "../../config/pusher.json"
 import { handleRolled } from "../Dice"
 
-export default function usePusherSubscription(qwixx) {
+export default function usePusherSubscription(user) {
   useEffect(() => {
-    if (!qwixx.channel) {
+    if (!user.channel) {
       return
     }
-    console.log("subscribe", qwixx.channel)
+    console.log("subscribe", user.channel)
     const pusher = new Pusher(key, {
       cluster: "eu",
       forceTLS: true,
@@ -21,7 +21,7 @@ export default function usePusherSubscription(qwixx) {
       }
     })
 
-    const channel = pusher.subscribe(qwixx.channel)
+    const channel = pusher.subscribe(user.channel)
 
     channel.bind("rolled-die", handleRolled)
 
@@ -29,5 +29,5 @@ export default function usePusherSubscription(qwixx) {
       console.log("unsubscribe")
       pusher.unsubscribe(qwixx.channel)
     }
-  }, [qwixx.channel])
+  }, [user.channel])
 }

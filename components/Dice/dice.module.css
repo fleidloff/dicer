@@ -1,0 +1,19 @@
+.dice {
+	display: grid;
+ 	grid-gap: 10px;
+	grid-template-columns: 100px  100px  100px 100px;
+    grid-template-areas:
+       	"red   yellow white"
+     	"green blue   white2";
+	width: 0;
+}
+
+@media (max-width: 500px) {
+	.dice {
+		grid-template-columns: 100px  100px;
+    	grid-template-areas:
+	       	"red   yellow"
+	     	"green blue"
+	     	"white white2";
+	}
+}

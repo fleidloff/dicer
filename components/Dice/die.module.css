@@ -1,15 +1,15 @@
-.dice {
+.die {
 	display: grid;
- 	grid-gap: 10px;
-	grid-template-columns: 100px  100px  100px 100px;
-    grid-template-areas:
-       	"red   yellow white"
-     	"green blue   white2";
-	width: 0;
+    grid-template-columns: 1fr 1fr 1fr; 
+  	grid-gap: 0px 0px;
+  	margin: 5px;
+}
+
+.dot {
+	line-height: 1.33rem;
 }
 
 .die {
-
 	border: 1px solid black;
 	width: 4rem;
 	height: 4rem;
@@ -19,16 +19,6 @@
 	font-size: 2.5rem;
 	color: black;
 	background: white;
-}
-
-@media (max-width: 500px) {
-	.dice {
-		grid-template-columns: 100px  100px;
-    	grid-template-areas:
-	       	"red   yellow"
-	     	"green blue"
-	     	"white white2";
-	}
 }
 
 .red {

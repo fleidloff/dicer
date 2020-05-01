@@ -5,10 +5,11 @@ import usePusherSubscription from "./usePusherSubscription"
 import { rollDie } from "./api"
 import Section from "../Section"
 import Dice, { isRolling, isRolled } from "../Dice"
+import User from "../User"
 import RoomSelection, { mustShowRoomSelection } from "../RoomSelection"
 
 function Qwixx({ store }) {
-  usePusherSubscription(store.qwixx)
+  usePusherSubscription(store.user)
 
   if (mustShowRoomSelection()) {
     return <RoomSelection />
@@ -16,18 +17,8 @@ function Qwixx({ store }) {
 
   return (
     <Section>
-      {isRolled() && store.dice.name === store.qwixx.name && store.dice.hashedId !== store.qwixx.hashedId && (
-        <p>
-          <b>ACHTUNG! JEMAND HAT DEN GLEICHEN NAMEN WIE DU!</b>
-        </p>
-      )}
-      <p>
-        {isRolled() && `${store.dice.name} rolled`}
-        {isRolling() && `${store.dice.name} rolls`}&nbsp;
-      </p>
-      <p></p>
+      <User />
       <Dice />
-      <br />
       <br />
       <button className={`button ${isRolling() ? "is-loading" : ""}`} onClick={() => isRolling() || rollDie()}>
         Roll Die
