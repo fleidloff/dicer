@@ -4,7 +4,7 @@ import { collect } from "react-recollect"
 import usePusherSubscription from "./usePusherSubscription"
 import { rollDie } from "./api"
 import Section from "../Section"
-import Dice, { ROLLING } from "../Dice"
+import Dice, { isRolling, isRolled } from "../Dice"
 import RoomSelection from "../RoomSelection"
 
 function Qwixx({ store }) {
@@ -14,24 +14,25 @@ function Qwixx({ store }) {
     return <RoomSelection />
   }
 
-  const isRolling = store.qwixx.value === ROLLING
-
   return (
     <Section>
-      {store.qwixx.value.name === store.qwixx.name && store.qwixx.value.hashedId !== store.qwixx.hashedId && (
+      {isRolled() && store.qwixx.dice.name === store.qwixx.name && store.qwixx.dice.hashedId !== store.qwixx.hashedId && (
         <p>
           <b>ACHTUNG! JEMAND HAT DEN GLEICHEN NAMEN WIE DU!</b>
         </p>
       )}
       <p>
-        {store.qwixx.value.name && `${store.qwixx.value.name} rolled`}
-        {store.qwixx.rolling && `${store.qwixx.rolling} rolls`}&nbsp;
+        {isRolled() && `${store.qwixx.dice.name} rolled`}
+        {isRolling() && `${store.qwixx.dice.name} rolls`}&nbsp;
       </p>
       <p></p>
-      <Dice value={store.qwixx.value} />
+      <Dice />
       <br />
       <br />
-      <button className={`button ${isRolling ? "is-loading" : ""}`} onClick={() => isRolling || rollDie(store.qwixx)}>
+      <button
+        className={`button ${isRolling() ? "is-loading" : ""}`}
+        onClick={() => isRolling() || rollDie(store.qwixx)}
+      >
         Roll Die
       </button>
     </Section>

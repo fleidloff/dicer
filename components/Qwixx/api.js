@@ -3,8 +3,7 @@ import { ROLLING } from "../Dice"
 
 function rollDie(qwixx) {
   // todo: new state for initiated rolling with abort condition after 4 seconds
-  qwixx.value = ROLLING
-  qwixx.rolling = qwixx.name
+  qwixx.dice = { ...ROLLING, name: qwixx.name }
 
   axios
     .post("/api/qwixx", {

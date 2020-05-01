@@ -9,8 +9,7 @@ store.qwixx = {
   name: "",
   id: uuidv4(),
   hashedId: null,
-  value: INITIAL,
-  rolling: null,
+  dice: INITIAL,
 }
 
 if (process.env.NODE_ENV !== "production") {
