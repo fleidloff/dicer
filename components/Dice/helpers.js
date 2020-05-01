@@ -2,13 +2,20 @@ import { store } from "react-recollect"
 import { ROLLING, ROLLED, INITIAL } from "./index"
 
 export function isRolling() {
-  return store.qwixx.dice.state === ROLLING.state
+  return store.dice.state === ROLLING.state
 }
 
 export function isRolled() {
-  return store.qwixx.dice.state === ROLLED.state
+  return store.dice.state === ROLLED.state
 }
 
 export function isInitial() {
-  return store.qwixx.dice.state === INITIAL.state
+  return store.dice.state === INITIAL.state
+}
+
+export function handleRolled({ value }) {
+  store.dice = { ...ROLLING, name: value.name }
+  setTimeout(() => {
+    store.dice = { ...ROLLED, ...value }
+  }, 500)
 }

@@ -1,6 +1,5 @@
 import { store } from "react-recollect"
 import { v4 as uuidv4 } from "uuid"
-import { INITIAL } from "../Dice"
 
 import Qwixx from "./Qwixx"
 
@@ -9,7 +8,6 @@ store.qwixx = {
   name: "",
   id: uuidv4(),
   hashedId: null,
-  dice: INITIAL,
 }
 
 if (process.env.NODE_ENV !== "production") {

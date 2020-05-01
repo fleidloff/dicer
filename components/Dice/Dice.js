@@ -4,7 +4,7 @@ import styles from "./die.module.css"
 import { INITIAL, ROLLING } from "./index"
 
 function Dice({ store }) {
-  const { dice } = store.qwixx
+  const { dice } = store
   if (!dice.state) {
     return ""
   }
