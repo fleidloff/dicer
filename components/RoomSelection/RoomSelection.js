@@ -4,12 +4,12 @@ import { collect } from "react-recollect"
 import Section from "../Section"
 
 function RoomSelection({ store }) {
-  const [name, setName] = useState(store.qwixx.name)
-  const [channel, setChannel] = useState(store.qwixx.channel)
+  const [name, setName] = useState(store.user.name)
+  const [channel, setChannel] = useState(store.user.channel)
 
   function handleSubmit() {
-    store.qwixx.name = name
-    store.qwixx.channel = encodeURIComponent(channel.replace(" ", ""))
+    store.user.name = name
+    store.user.channel = encodeURIComponent(channel.replace(" ", ""))
   }
 
   return (
