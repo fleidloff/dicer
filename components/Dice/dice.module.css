@@ -3,8 +3,8 @@
  	grid-gap: 10px;
 	grid-template-columns: 100px  100px  100px 100px;
     grid-template-areas:
-       	"red   yellow white"
-     	"green blue   white2";
+       	"die-red   die-yellow die-white"
+     	"die-green die-blue   die-white2";
 	width: 0;
 }
 
@@ -12,8 +12,8 @@
 	.dice {
 		grid-template-columns: 100px  100px;
     	grid-template-areas:
-	       	"red   yellow"
-	     	"green blue"
-	     	"white white2";
+	       	"die-red   die-yellow"
+	     	"die-green die-blue"
+	     	"die-white die-white2";
 	}
 }

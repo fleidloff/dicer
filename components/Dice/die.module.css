@@ -23,28 +23,28 @@
 
 .red {
 	background-color: #df0000;
-	grid-area: red;
+	grid-area: die-red;
 }
 
 .yellow {
 	background-color: #fdca00;
-	grid-area: yellow;
+	grid-area: die-yellow;
 }
 
 .green {
 	background-color: #339900;
-	grid-area: green;
+	grid-area: die-green;
 }
 
 .blue {
 	background-color: #336699;
-	grid-area: blue;
+	grid-area: die-blue;
 }
 
 .white {
-	grid-area: white;
+	grid-area: die-white;
 }	
 
 .white2 {
-	grid-area: white2;
+	grid-area: die-white2;
 }	
